@@ -12,20 +12,22 @@
   var sections = document.querySelectorAll("main section[id]");
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Swami's Profile Information
+  // Swami's Profile Information (from Resume)
   var SWAMI_DATA = {
-    name: "Swami Mahesh Sangram",
+    name: "Mahesh Sangram Swami",
+    displayName: "Swami Mahesh Sangram",
     phone: "+91 9022731301",
     phoneClean: "9022731301",
     email: "swamimahesh202@gmail.com",
     whatsapp: "919022731301",
     college: "M.G.M.'s College of Engineering, Nanded",
-    university: "Dr. Babasaheb Ambedkar Technological University (DBATU)",
+    university: "DBATU Lonere",
+    cgpa: "7.58",
     batch: "2023 – 2027",
-    degree: "B.Tech in Information Technology",
+    degree: "B.E. / B.Tech in Information Technology",
     location: "Nanded, Maharashtra, India",
     github: "https://github.com/swammahesh2005",
-    linkedin: "https://www.linkedin.com/in/swami-mahesh-sangram"
+    linkedin: "https://www.linkedin.com/in/mahesh-sangram-swami-915a6028b"
   };
 
   // Sync year
