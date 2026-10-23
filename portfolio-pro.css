@@ -1,0 +1,905 @@
+/* ==========================================================================
+   PORTFOLIO PRO STYLES - SWAMI MAHESH SANGRAM
+   High-end, modern, glassmorphic aesthetic with neon accents & dynamic animations
+   ========================================================================== */
+
+:root {
+  --primary-glow: rgba(62, 224, 180, 0.35);
+  --blue-glow: rgba(74, 168, 255, 0.35);
+  --purple-glow: rgba(168, 85, 247, 0.35);
+  --whatsapp-color: #25d366;
+  --whatsapp-glow: rgba(37, 211, 102, 0.4);
+  --gradient-neon: linear-gradient(135deg, #3ee0b4 0%, #3b82f6 50%, #8b5cf6 100%);
+  --gradient-card: linear-gradient(145deg, rgba(17, 27, 46, 0.85) 0%, rgba(9, 15, 26, 0.95) 100%);
+  --border-neon: rgba(62, 224, 180, 0.25);
+  --card-blur: blur(16px);
+}
+
+/* --------------------------------------------------------------------------
+   Dynamic Aurora Background Glow
+   -------------------------------------------------------------------------- */
+body::after {
+  content: "";
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, rgba(62, 224, 180, 0.08) 40%, transparent 70%);
+  pointer-events: none;
+  filter: blur(80px);
+  z-index: 0;
+  animation: floatAurora 14s ease-in-out infinite alternate;
+}
+
+@keyframes floatAurora {
+  0% { transform: translate(-50%, 0) scale(1); }
+  50% { transform: translate(-45%, 30px) scale(1.1); }
+  100% { transform: translate(-55%, -20px) scale(0.95); }
+}
+
+/* --------------------------------------------------------------------------
+   Gradient Text Utilities
+   -------------------------------------------------------------------------- */
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff 10%, #3ee0b4 60%, #4aa8ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.gradient-text-alt {
+  background: linear-gradient(135deg, #4aa8ff 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* --------------------------------------------------------------------------
+   Hero Section Enhancements
+   -------------------------------------------------------------------------- */
+.hero-enhanced {
+  position: relative;
+  padding: 3.5rem 0 4.5rem;
+  overflow: visible;
+}
+
+.hero-enhanced .hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.hero-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  background: rgba(62, 224, 180, 0.1);
+  border: 1px solid rgba(62, 224, 180, 0.3);
+  color: #3ee0b4;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 0 20px rgba(62, 224, 180, 0.15);
+}
+
+.status-pulse-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #3ee0b4;
+  position: relative;
+}
+
+.status-pulse-dot::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: #3ee0b4;
+  opacity: 0.6;
+  animation: pulseDot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(2.2); opacity: 0; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+.hero-name {
+  font-size: clamp(2.4rem, 4.8vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+  margin: 0 0 0.8rem;
+}
+
+.role-typing-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--mono);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #3ee0b4;
+  background: rgba(7, 16, 24, 0.7);
+  padding: 0.55rem 0.95rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  width: fit-content;
+  margin-bottom: 1.3rem;
+}
+
+.role-prefix {
+  color: #4aa8ff;
+  font-weight: 600;
+}
+
+.hero-bio {
+  color: #a3b8cc;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1.8rem;
+  max-width: 540px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-bottom: 1.8rem;
+}
+
+.btn-glow-primary {
+  background: linear-gradient(135deg, #3ee0b4 0%, #2bb8d9 100%);
+  color: #04110c !important;
+  font-weight: 700;
+  box-shadow: 0 4px 25px rgba(62, 224, 180, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-glow-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(62, 224, 180, 0.55);
+  filter: brightness(1.08);
+}
+
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: #ffffff !important;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+  filter: brightness(1.1);
+}
+
+.hero-quick-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.quick-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #93a4bb;
+  font-size: 0.88rem;
+}
+
+.quick-meta-item svg {
+  width: 17px;
+  height: 17px;
+  color: #3ee0b4;
+  flex-shrink: 0;
+}
+
+.quick-meta-item a {
+  color: #e8eef8;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.quick-meta-item a:hover {
+  color: #3ee0b4;
+}
+
+/* --------------------------------------------------------------------------
+   Swami Mahesh Profile Showcase Card
+   -------------------------------------------------------------------------- */
+.profile-card-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-card-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+}
+
+.profile-card-glow {
+  position: absolute;
+  inset: -6px;
+  background: var(--gradient-neon);
+  border-radius: 28px;
+  filter: blur(20px);
+  opacity: 0.55;
+  animation: glowRotate 8s linear infinite alternate;
+  z-index: 1;
+}
+
+@keyframes glowRotate {
+  0% { opacity: 0.4; filter: blur(18px); }
+  50% { opacity: 0.7; filter: blur(26px); }
+  100% { opacity: 0.45; filter: blur(20px); }
+}
+
+.profile-photo-card {
+  position: relative;
+  z-index: 2;
+  background: var(--gradient-card);
+  backdrop-filter: var(--card-blur);
+  border: 1px solid rgba(62, 224, 180, 0.35);
+  border-radius: 24px;
+  padding: 1.1rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.profile-photo-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(62, 224, 180, 0.7);
+}
+
+.profile-image-frame {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  aspect-ratio: 4 / 4.7;
+  background: #0d1524;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.profile-photo-card:hover .profile-image {
+  transform: scale(1.03);
+}
+
+.profile-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(7, 11, 18, 0.85) 100%);
+  pointer-events: none;
+}
+
+.profile-floating-badge {
+  position: absolute;
+  background: rgba(13, 21, 36, 0.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 0.55rem 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+  z-index: 3;
+  animation: floatBadge 4s ease-in-out infinite;
+}
+
+.profile-floating-badge.badge-top-right {
+  top: -12px;
+  right: -12px;
+  border-color: rgba(74, 168, 255, 0.4);
+  animation-delay: 0s;
+}
+
+.profile-floating-badge.badge-bottom-left {
+  bottom: 24px;
+  left: -16px;
+  border-color: rgba(62, 224, 180, 0.4);
+  animation-delay: 2s;
+}
+
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+.badge-icon {
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.badge-text-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.badge-text-sub {
+  font-size: 0.7rem;
+  color: #3ee0b4;
+  font-family: var(--mono);
+}
+
+.profile-card-footer {
+  margin-top: 1rem;
+  text-align: center;
+  padding: 0.4rem 0.6rem;
+}
+
+.profile-card-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+}
+
+.verified-icon {
+  width: 18px;
+  height: 18px;
+  color: #3b82f6;
+}
+
+.profile-card-college {
+  font-size: 0.82rem;
+  color: #93a4bb;
+  margin: 0.25rem 0 0;
+}
+
+/* --------------------------------------------------------------------------
+   Stats Highlights Section
+   -------------------------------------------------------------------------- */
+.stats-banner {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+}
+
+.stat-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.stat-number {
+  font-size: 1.9rem;
+  font-weight: 800;
+  font-family: var(--mono);
+  background: var(--gradient-neon);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------------------
+   Contact Info Showcase Cards
+   -------------------------------------------------------------------------- */
+.contact-highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.contact-card-interactive {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.3rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-card-interactive::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.contact-card-interactive:hover {
+  border-color: rgba(62, 224, 180, 0.45);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.contact-card-interactive:hover::before {
+  opacity: 1;
+}
+
+.contact-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(62, 224, 180, 0.1);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.3rem;
+}
+
+.contact-card-icon.whatsapp {
+  background: rgba(37, 211, 102, 0.15);
+  color: #25d366;
+}
+
+.contact-card-icon.phone {
+  background: rgba(74, 168, 255, 0.15);
+  color: #4aa8ff;
+}
+
+.contact-card-icon.email {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
+
+.contact-card-body h4 {
+  margin: 0 0 0.25rem;
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+.contact-card-body p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+  word-break: break-all;
+}
+
+.contact-card-action {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+  font-family: var(--mono);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   Contact Modal (Show Data Upon Interaction)
+   -------------------------------------------------------------------------- */
+.contact-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 7, 12, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.contact-modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.contact-modal {
+  background: #0c1422;
+  border: 1px solid rgba(62, 224, 180, 0.4);
+  border-radius: 24px;
+  max-width: 580px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.8), 0 0 40px rgba(62, 224, 180, 0.2);
+  transform: scale(0.92) translateY(20px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.contact-modal-backdrop.active .contact-modal {
+  transform: scale(1) translateY(0);
+}
+
+.contact-modal-header {
+  position: relative;
+  background: linear-gradient(135deg, rgba(62, 224, 180, 0.15) 0%, rgba(74, 168, 255, 0.1) 100%);
+  padding: 2rem 2rem 1.4rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+}
+
+.contact-modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.modal-avatar-wrapper {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 0.9rem;
+  border-radius: 50%;
+  padding: 3px;
+  background: var(--gradient-neon);
+}
+
+.modal-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.modal-title {
+  font-size: 1.4rem;
+  margin: 0;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.modal-subtitle {
+  font-size: 0.88rem;
+  color: #3ee0b4;
+  margin: 0.3rem 0 0;
+  font-family: var(--mono);
+}
+
+.contact-modal-body {
+  padding: 1.8rem 2rem;
+}
+
+.modal-success-badge {
+  background: rgba(37, 211, 102, 0.12);
+  border: 1px solid rgba(37, 211, 102, 0.35);
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #e2fbe8;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-success-badge svg {
+  color: #25d366;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.modal-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.6rem;
+}
+
+.modal-data-table tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.modal-data-table tr:last-child {
+  border-bottom: none;
+}
+
+.modal-data-table td {
+  padding: 0.75rem 0.5rem;
+  font-size: 0.92rem;
+}
+
+.modal-data-table .data-label {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  width: 32%;
+}
+
+.modal-data-table .data-value {
+  color: #e8eef8;
+  font-weight: 500;
+}
+
+.modal-data-table .data-value a {
+  color: #3ee0b4;
+  text-decoration: underline;
+}
+
+.modal-action-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+
+.btn-vcard {
+  grid-column: 1 / -1;
+  background: rgba(74, 168, 255, 0.12);
+  border: 1px solid rgba(74, 168, 255, 0.4);
+  color: #60a5fa !important;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.btn-vcard:hover {
+  background: rgba(74, 168, 255, 0.22);
+  border-color: #60a5fa;
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   Floating Quick-Connect Bar
+   -------------------------------------------------------------------------- */
+.floating-connect-bar {
+  position: fixed;
+  bottom: 1.6rem;
+  right: 1.6rem;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(13, 21, 36, 0.88);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(62, 224, 180, 0.3);
+  padding: 0.5rem 0.65rem;
+  border-radius: 999px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  animation: barSlideIn 0.8s ease-out;
+}
+
+@keyframes barSlideIn {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.floating-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.floating-btn.wa {
+  background: #25d366;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}
+
+.floating-btn.call {
+  background: #3b82f6;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+.floating-btn.mail {
+  background: #ef4444;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+}
+
+.floating-btn.top {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #3ee0b4;
+}
+
+.floating-btn:hover {
+  transform: scale(1.15) translateY(-2px);
+}
+
+/* Tooltip for floating buttons */
+.floating-btn[data-tip]::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #070b12;
+  border: 1px solid var(--border);
+  color: #fff;
+  font-size: 0.72rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  font-family: var(--mono);
+}
+
+.floating-btn:hover[data-tip]::after {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Messages Viewer (Inbox for Swami)
+   -------------------------------------------------------------------------- */
+.inbox-toggle-btn {
+  background: transparent;
+  border: 1px dashed var(--border);
+  color: var(--muted);
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-family: var(--mono);
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.2s ease;
+}
+
+.inbox-toggle-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.inbox-drawer {
+  display: none;
+  margin-top: 1rem;
+  background: #09101b;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.inbox-drawer.active {
+  display: block;
+}
+
+.inbox-item {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.inbox-item:last-child {
+  border-bottom: none;
+}
+
+.inbox-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--accent-2);
+  font-family: var(--mono);
+}
+
+.inbox-text {
+  font-size: 0.85rem;
+  color: #cdd9e5;
+  margin: 0.3rem 0 0;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Adaptations
+   -------------------------------------------------------------------------- */
+@media (max-width: 960px) {
+  .hero-enhanced .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.8rem;
+  }
+
+  .profile-card-wrapper {
+    max-width: 340px;
+  }
+
+  .stats-banner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-name {
+    font-size: 2.2rem;
+  }
+
+  .profile-floating-badge.badge-top-right {
+    top: -8px;
+    right: -6px;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .profile-floating-badge.badge-bottom-left {
+    bottom: 12px;
+    left: -8px;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .stats-banner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .modal-action-row {
+    grid-template-columns: 1fr;
+  }
+
+  .floating-connect-bar {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
